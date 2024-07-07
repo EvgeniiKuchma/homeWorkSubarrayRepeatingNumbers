@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace homeWorkSubarrayRepeatingNumbers
+namespace homeWorkSubarrayNumberesRepeatingNumbers
 {
     internal class Program
     {
@@ -8,8 +8,8 @@ namespace homeWorkSubarrayRepeatingNumbers
         {
             Random random = new Random();
 
-            int arraySize = 30;
-            int[] array = new int[arraySize];
+            int arrayNumberesSize = 30;
+            int[] arrayNumberes = new int[arrayNumberesSize];
 
             int minRangeValue = 1;
             int maxRangeValue = 5;
@@ -18,32 +18,32 @@ namespace homeWorkSubarrayRepeatingNumbers
 
             string line = "";
 
-            for (int i = 0; i < arraySize; i++)
+            for (int i = 0; i < arrayNumberesSize; i++)
             {
-                array[i] = random.Next(minRangeValue, maxRangeValue);
+                arrayNumberes[i] = random.Next(minRangeValue, maxRangeValue);
             }
 
-            foreach (int i in array)
+            foreach (int numberes in arrayNumberes)
             {
-                Console.Write(i + " ");
+                Console.Write(numberes + " ");
             }
 
             Console.WriteLine("\n");
 
-            for (int i = 0; i < array.Length - 1; i++)
+            for (int i = 0; i < arrayNumberes.Length - 1; i++)
             {
-                if (array[i] == array[i + 1])
+                if (arrayNumberes[i] == arrayNumberes[i + 1])
                 {
                     counter++;
 
                     if (counter > maxCounter)
                     {
                         maxCounter = counter;
-                        line = array[i].ToString();
+                        line = arrayNumberes[i].ToString();
                     }
                     else if (counter == maxCounter)
                     {
-                        line += $", {array[i].ToString()}";
+                        line += $", {arrayNumberes[i].ToString()}";
                     }
                 }
                 else
